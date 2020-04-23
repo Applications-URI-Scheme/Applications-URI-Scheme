@@ -38,7 +38,10 @@
 ### FreezeYou
 - 打开`FreezeYou`：`freezeyou://start`
 - 打开`FreezeYou`：`freezeyou://run`
-- 冻结解冻指定应用：`freezeyou://fuf/?pkgName=[包名]`
+- 冻结解冻指定应用：`freezeyou://fuf/?pkgName=[包名]`<sup>[引自](https://zidon.net/zh-CN/api/uri.html)</sup>
+- 请求解冻指定应用：`freezeyou://fuf/?pkgName=[包名]&action=unfreeze`<sup>[引自](https://zidon.net/zh-CN/api/uri.html)</sup>
+- 请求冻结指定应用：`freezeyou://fuf/?pkgName=[包名]&action=freeze`<sup>[引自](https://zidon.net/zh-CN/api/uri.html)</sup>
+- 请求解冻并启动指定应用：`freezeyou://fuf/?pkgName=[包名]&action=unFreezeAndRun`<sup>[引自](https://zidon.net/zh-CN/api/uri.html)</sup>
 
 ## G
 
