@@ -1,3 +1,7 @@
+---
+metaTitle: 各应用 URI Scheme
+---
+
 # 各应用 URI Scheme
 
 ::: tip
