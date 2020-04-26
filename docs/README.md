@@ -6,15 +6,15 @@ metaTitle: 各应用 URI Scheme
 
 ::: tip
 - 本列表内内容中文按拼音首字母，英文按首英文字母排序，中英混排。
-- 欢迎将您所知道的应用的 **URI Scheme** 添加至此。
-- 贡献 **URI Scheme** 时建议以已存在的内容的类似的格式贡献，统一格式方便查找。
+- 欢迎将您所知道的应用的 **URI Scheme** [添加至此](https://github.com/FreezeYou/Applications-URI-Scheme/edit/master/docs/README.md)。
+- 添加 **URI Scheme** 时建议以已存在的内容的类似的格式添加，统一格式方便查找。
 :::
 
 ## \#
 
 ## A
 
-### Alipay（支付宝）
+### Alipay
 - 打开`付款码`：`alipayqr://platformapi/startapp?saId=20000056`<sup>[引自](https://st3376519.huoban.com/share/1985010/VGi2N5Vf0C1MVnHCVWiBc8L9g15c9VGJbMGcFrb6/172707/list)</sup>
 - 打开`扫一扫`：`alipayqr://platformapi/startapp?saId=10000007`<sup>[引自](https://st3376519.huoban.com/share/1985010/VGi2N5Vf0C1MVnHCVWiBc8L9g15c9VGJbMGcFrb6/172707/list)</sup>
 - 打开`账单`：`alipayqr://platformapi/startapp?saId=20000003`
@@ -85,15 +85,21 @@ metaTitle: 各应用 URI Scheme
 
 ## W
 
-### WeChat（微信）
+### WeChat
 - 打开`微信`：`weixin://`
 
+### 微信
+- 见 [WeChat](#wechat)
 
 ## X
 
 ## Y
 
 ## Z
+
 ### 自冻
 - 见 [FreezeYou](#freezeyou)
+
+### 支付宝
+- 见 [Alipay](#alipay)
 
