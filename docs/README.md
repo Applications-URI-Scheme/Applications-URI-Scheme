@@ -28,6 +28,17 @@ metaTitle: 各应用 URI Scheme
 - 打开`安全设备`：`alipays://platformapi/startapp?appId=60000011`
 - 打开`中小学`：`alipays://platformapi/startapp?appId=60000012`
 - 打开`蚂蚁公益保险`：`alipays://platformapi/startapp?appId=60000023`
+- 打开`商家服务`：`alipays://platformapi/startapp?appId=60000081`
+- 打开`小程序`：`alipays://platformapi/startapp?appId=66666666`
+- 打开`发现AR`：`alipays://platformapi/startapp?appId=66666678`
+- 打开`支付宝安全中心`：`alipayqr://platformapi/startapp?saId=20000070`
+- 打开`城市一卡通`：`alipayqr://platformapi/startapp?saId=20000071`
+- 打开`城市一卡通`：`alipayqr://platformapi/startapp?saId=20000088`
+- 打开`账单`：`alipayqr://platformapi/startapp?saId=20000076`
+- 打开`上银汇款`：`alipayqr://platformapi/startapp?saId=20000078`
+- 打开`我的应用`：`alipayqr://platformapi/startapp?saId=20000081`
+- 打开`我的二维码及吱口令`：`alipayqr://platformapi/startapp?saId=20000085`
+- 打开`红包`：`alipayqr://platformapi/startapp?saId=20000086`
 
 ## B
 
