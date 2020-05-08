@@ -6,7 +6,7 @@ metaTitle: 各应用 URI Scheme
 
 ::: tip
 - 本列表内内容中文按拼音首字母，英文按首英文字母排序，中英混排。
-- 欢迎将您所知道的应用的 **URI Scheme** [添加至此](https://github.com/FreezeYou/Applications-URI-Scheme/edit/master/docs/README.md)。
+- 欢迎将您所知道的应用的 **URI Scheme** [添加至此](https://github.com/Applications-URI-Scheme/Applications-URI-Scheme/edit/master/docs/README.md)。
 - 添加 **URI Scheme** 时建议以已存在的内容的类似的格式添加，统一格式方便查找。
 :::
 

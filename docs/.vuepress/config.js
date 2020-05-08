@@ -28,11 +28,14 @@ module.exports = {
       `咦，这个页面跑丢了！`
     ],
     navbar: true,
+    nav: [
+      { text: '状态', link: 'https://status.urischeme.com' },
+    ],
     sidebar: 'auto',
     sidebarDepth: 2,
     activeHeaderLinks: true,
-    repo: 'https://github.com/FreezeYou/Applications-URI-Scheme',
-    docsRepo: 'https://github.com/FreezeYou/Applications-URI-Scheme',
+    repo: 'https://github.com/Applications-URI-Scheme/Applications-URI-Scheme',
+    docsRepo: 'https://github.com/Applications-URI-Scheme/Applications-URI-Scheme',
     docsDir: 'docs',
     docsBranch: 'master',
     editLinks: true,
@@ -40,6 +43,6 @@ module.exports = {
     nextLinks: true,
     prevLinks: true,
     search: true,
-    searchMaxSuggestions: 10
+    searchMaxSuggestions: 12
   }
 }
