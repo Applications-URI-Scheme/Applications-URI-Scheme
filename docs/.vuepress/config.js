@@ -15,20 +15,40 @@ module.exports = {
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
   plugins: [
-    ['@vuepress/back-to-top']
+    ['@vuepress/plugin-pwa'],
+    [
+      '@vuepress/plugin-pwa-popup',
+      {
+        locales: {
+          '/': {
+            message: '发现有内容更新',
+            buttonText: '刷新',
+          },
+        },
+      },
+    ],
+    ['@vuepress/plugin-back-to-top'],
+    [
+      '@vuepress/plugin-search',
+      {
+        locales: {
+          '/': {
+            placeholder: '搜索',
+          },
+        },
+      },
+    ],
   ],
   themeConfig: {
-    editLinkText: '编辑此页',
-    lastUpdated: '最后更新于',
-    notFoundLinkText: '返回首页',
-    notFoundMessages: [
-      `这里怎么空荡荡的？`,
-      `咦，怎么到这里来了？`,
-      `四零四了！`,
-      `咦，这个页面跑丢了！`
-    ],
-    navbar: true,
-    nav: [
+        searchPlaceholder: '搜索',
+        backToHome: '返回首页',
+        notFound: [
+          `这里怎么空荡荡的？`,
+          `咦，怎么到这里来了？`,
+          `四零四了！`,
+          `咦，这个页面跑丢了！`
+        ],
+    navbar: [
       { text: '状态', link: 'https://status.urischeme.com' },
     ],
     sidebar: 'auto',
