@@ -1,4 +1,10 @@
-module.exports = {
+import { defineUserConfig, defaultTheme } from 'vuepress'
+import { pwaPlugin } from '@vuepress/plugin-pwa'
+import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup'
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
+import { searchPlugin } from '@vuepress/plugin-search'
+
+export default defineUserConfig({
   title: '各应用 URI Scheme',
   description: '各应用 URI Scheme',
   locales: {
@@ -15,39 +21,33 @@ module.exports = {
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
   plugins: [
-    ['@vuepress/plugin-pwa'],
-    [
-      '@vuepress/plugin-pwa-popup',
-      {
-        locales: {
-          '/': {
-            message: '发现有内容更新',
-            buttonText: '刷新',
-          },
+    pwaPlugin(),
+    pwaPopupPlugin({
+      locales: {
+        '/': {
+          message: '发现有内容更新',
+          buttonText: '刷新',
         },
       },
-    ],
-    ['@vuepress/plugin-back-to-top'],
-    [
-      '@vuepress/plugin-search',
-      {
-        locales: {
-          '/': {
-            placeholder: '搜索',
-          },
+    }),
+    backToTopPlugin(),
+    searchPlugin({
+      locales: {
+        '/': {
+          placeholder: '搜索',
         },
       },
-    ],
+    }),
   ],
-  themeConfig: {
-        searchPlaceholder: '搜索',
-        backToHome: '返回首页',
-        notFound: [
-          `这里怎么空荡荡的？`,
-          `咦，怎么到这里来了？`,
-          `四零四了！`,
-          `咦，这个页面跑丢了！`
-        ],
+  theme: defaultTheme({
+    searchPlaceholder: '搜索',
+    backToHome: '返回首页',
+    notFound: [
+      `这里怎么空荡荡的？`,
+      `咦，怎么到这里来了？`,
+      `四零四了！`,
+      `咦，这个页面跑丢了！`
+    ],
     navbar: [
       { text: '状态', link: 'https://status.urischeme.com' },
     ],
@@ -64,5 +64,5 @@ module.exports = {
     prevLinks: true,
     search: true,
     searchMaxSuggestions: 12
-  }
-}
+  })
+})
