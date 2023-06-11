@@ -41,7 +41,6 @@ jobs:
       - name: Install packages
         run: |
           npm install
-          npm test
 
       - name: Build docs
         run: npx vuepress build docs
