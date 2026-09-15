@@ -36,14 +36,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           # Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0
-          node-version: '18'
+          node-version: '24'
+          cache: npm
 
       - name: Install packages
         run: |
-          npm install
+          npm ci
 
       - name: Build docs
-        run: npx vuepress build docs
+        run: npm run docs:build
     
       - name: Checkout gh-pages branch
         uses: actions/checkout@v3

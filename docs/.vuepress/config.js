@@ -1,7 +1,7 @@
-import { defineUserConfig, defaultTheme } from 'vuepress'
+import { defineUserConfig } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defaultTheme } from '@vuepress/theme-default'
 import { pwaPlugin } from '@vuepress/plugin-pwa'
-import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup'
-import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
 import { searchPlugin } from '@vuepress/plugin-search'
 
 export default defineUserConfig({
@@ -20,18 +20,37 @@ export default defineUserConfig({
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
+  bundler: viteBundler({
+    viteOptions: {
+      plugins: [{
+        name: 'pwa-registration-after-load',
+        // register-service-worker 1.7.2 waits for an event that may already have
+        // fired when the PWA plugin dynamically imports it.
+        transform(code, id) {
+          if (!id.replaceAll('\\', '/').endsWith('/register-service-worker/index.js')) return
+          return code.replace(
+            "window.addEventListener('load', resolve);",
+            "document.readyState === 'complete' ? resolve() : window.addEventListener('load', resolve);",
+          )
+        },
+      }],
+    },
+  }),
+  // The service worker handles asset caching.
+  shouldPrefetch: false,
   plugins: [
-    pwaPlugin(),
-    pwaPopupPlugin({
+    pwaPlugin({
+      serviceWorkerFilename: 'service-worker.js',
+      update: 'available',
+      themeColor: '#42B983',
       locales: {
         '/': {
-          message: '发现有内容更新',
-          buttonText: '刷新',
+          update: '发现有内容更新',
         },
       },
     }),
-    backToTopPlugin(),
     searchPlugin({
+      maxSuggestions: 12,
       locales: {
         '/': {
           placeholder: '搜索',
@@ -40,7 +59,6 @@ export default defineUserConfig({
     }),
   ],
   theme: defaultTheme({
-    searchPlaceholder: '搜索',
     backToHome: '返回首页',
     notFound: [
       `这里怎么空荡荡的？`,
@@ -53,16 +71,13 @@ export default defineUserConfig({
     ],
     sidebar: 'auto',
     sidebarDepth: 2,
-    activeHeaderLinks: true,
     repo: 'https://github.com/Applications-URI-Scheme/Applications-URI-Scheme',
     docsRepo: 'https://github.com/Applications-URI-Scheme/Applications-URI-Scheme',
     docsDir: 'docs',
     docsBranch: 'master',
-    editLinks: true,
-    smoothScroll: true,
-    nextLinks: true,
-    prevLinks: true,
-    search: true,
-    searchMaxSuggestions: 12
+    editLink: true,
+    themePlugins: {
+      backToTop: true,
+    },
   })
 })
