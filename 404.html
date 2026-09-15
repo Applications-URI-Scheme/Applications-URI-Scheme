@@ -1,33 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="VuePress 2.0.0-beta.63">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
     <style>
       :root {
-        --c-bg: #fff;
+        --vp-c-bg: #fff;
       }
-      html.dark {
-        --c-bg: #22272e;
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
       }
-      html, body {
-        background-color: var(--c-bg);
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
       }
     </style>
     <script>
-      const userMode = localStorage.getItem('vuepress-color-scheme');
-			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
-				document.documentElement.classList.toggle('dark', true);
-			}
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
     </script>
-    <meta name="theme-color" content="#42B983"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="msapplication-TileColor" content="#000000"><title>各应用 URI Scheme</title><meta name="description" content="各应用 URI Scheme">
-    <link rel="preload" href="/assets/style-432abe92.css" as="style"><link rel="stylesheet" href="/assets/style-432abe92.css">
-    <link rel="modulepreload" href="/assets/app-fa664941.js"><link rel="modulepreload" href="/assets/404.html-f9875e7b.js"><link rel="modulepreload" href="/assets/404.html-2bfbf0b3.js"><link rel="prefetch" href="/assets/index.html-2e5de8ef.js" as="script"><link rel="prefetch" href="/assets/index.html-ff4c870f.js" as="script"><link rel="prefetch" href="/assets/index-e32a7948.js" as="script">
+    <meta name="theme-color" content="#42B983"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="msapplication-TileColor" content="#000000"><meta name="application-name" content="各应用 URI Scheme"><meta name="mobile-web-app-capable" content="yes"><link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials"><title>各应用 URI Scheme</title><meta name="description" content="各应用 URI Scheme">
+    <link rel="preload" href="/assets/style-CcStwp4C.css" as="style"><link rel="stylesheet" href="/assets/style-CcStwp4C.css">
+    <link rel="modulepreload" href="/assets/app-CWEyUaoV.js"><link rel="modulepreload" href="/assets/404.html-DxSF456y.js">
+    
   </head>
   <body>
-    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>咦，这个页面跑丢了！</blockquote><a href="/" class="">返回首页</a></div></main></div><!----><!----><!--]--></div>
-    <script type="module" src="/assets/app-fa664941.js" defer></script>
+    <div id="app"><!--[--><div class="vp-theme-container" vp-container data-v-3fac1c72><main class="page" data-v-3fac1c72><div vp-content data-v-3fac1c72><h1 data-v-3fac1c72>404</h1><blockquote data-v-3fac1c72>这里怎么空荡荡的？</blockquote><a class="route-link" href="/" data-v-3fac1c72>返回首页</a></div></main></div><!--[--><!----><!----><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-CWEyUaoV.js" defer></script>
   </body>
 </html>
