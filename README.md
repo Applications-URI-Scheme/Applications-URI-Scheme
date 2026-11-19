@@ -4,7 +4,7 @@ Built with VuePress 2 and the default theme.
 
 ## Development
 
-Use Node.js 22.18.0 or newer (Node.js 24 is used in CI), with npm installed.
+Use Node.js 22.22.0 or newer (Node.js 24 is used in CI), with npm installed.
 
 ```sh
 npm ci
@@ -23,8 +23,8 @@ deploys pushes to `master` to the existing `gh-pages` branch.
 ## VuePress versions
 
 VuePress 2 is still a release candidate. Core and the Vite bundler are pinned
-to `2.0.0-rc.31`; the default theme, search, and PWA plugins are pinned to the
-compatible `2.0.0-rc.137` release. Update these together and commit the npm
+to `2.0.0-rc.32`; the default theme, search, and PWA plugins are pinned to the
+compatible `2.0.0-rc.138` release. Update these together and commit the npm
 lockfile. The npm `latest` tag still points to VuePress 1; VuePress 2 uses `next`.
 
 The theme provides back-to-top support. PWA update notifications are configured
