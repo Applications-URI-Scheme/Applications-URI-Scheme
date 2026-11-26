@@ -1,6 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
-import { defaultTheme } from '@vuepress/theme-default'
+import { classicTheme } from '@vuepress/theme-classic'
 import { pwaPlugin } from '@vuepress/plugin-pwa'
 import { searchPlugin } from '@vuepress/plugin-search'
 
@@ -22,6 +22,8 @@ export default defineUserConfig({
   ],
   bundler: viteBundler({
     viteOptions: {
+      // rc.142 extracted this client helper without adding it to the SSR bundle.
+      ssr: { noExternal: ['@vuepress/theme-helper'] },
       plugins: [{
         name: 'pwa-registration-after-load',
         // register-service-worker 1.7.2 waits for an event that may already have
@@ -58,7 +60,7 @@ export default defineUserConfig({
       },
     }),
   ],
-  theme: defaultTheme({
+  theme: classicTheme({
     backToHome: '返回首页',
     notFound: [
       `这里怎么空荡荡的？`,

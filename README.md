@@ -1,6 +1,6 @@
 # Applications URI Scheme website
 
-Built with VuePress 2 and the default theme.
+Built with VuePress 2 and the classic theme (formerly the default theme).
 
 ## Development
 
@@ -23,9 +23,14 @@ deploys pushes to `master` to the existing `gh-pages` branch.
 ## VuePress versions
 
 VuePress 2 is still a release candidate. Core and the Vite bundler are pinned
-to `2.0.0-rc.32`; the default theme, search, and PWA plugins are pinned to the
-compatible `2.0.0-rc.138` release. Update these together and commit the npm
+to `2.0.0-rc.33`; the classic theme, search, and PWA plugins are pinned to the
+compatible `2.0.0-rc.142` release. Update these together and commit the npm
 lockfile. The npm `latest` tag still points to VuePress 1; VuePress 2 uses `next`.
+
+`@vuepress/theme-classic` preserves the existing layout after the former default
+theme was renamed in ecosystem `rc.141`.
+Vite bundles the new `@vuepress/theme-helper` during server rendering so its
+VuePress internal imports resolve correctly. Recheck this workaround on upgrades.
 
 The theme provides back-to-top support. PWA update notifications are configured
 inside the PWA plugin, replacing the separate legacy popup plugin. The service
